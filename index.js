@@ -62,7 +62,6 @@ app.get('/create', (req, res) => {
             res.redirect(`${host_url}/cart/${req.query.itemlist}?checkout[email]=${req.query.email}`)
         })
         .catch((error) => {
-            alert(error)
             console.error(error); 
         }); 
 })
