@@ -52,7 +52,7 @@ app.get('/create', async (req, res) => {
                 'content-type': 'application/json',
                 'X-Shopify-Access-Token': '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 '
                 }})
-            .then(resJson => {console.log(resJson)})
+            .then(resJson => {console.log(resJson);res.send("Success")})
             .catch(err => console.log(err))
 })
 
