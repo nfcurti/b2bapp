@@ -58,7 +58,7 @@ app.get('/create', cors(corsOptions), async (req, res) => {
                 'content-type': 'application/json',
                 'X-Shopify-Access-Token': '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 '
                 }})
-            .then(resJson => {console.log(resJson.data);res.send("Success")})
+            .then(resJson => {console.log(resJson.data);res.send(resJson.data)})
             .catch(err => console.log(err))
 })
 
