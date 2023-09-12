@@ -1,5 +1,5 @@
 const express = require('express')
-import fetch from 'node-fetch'
+const axios = require('axios');
 const app = express()
 const port = 3000
 
@@ -8,7 +8,7 @@ var host_url = "https://b2b.isovoxbooth.com"
 app.get('/create', (req, res) => {
     var tax_exempt = false
     
-    fetch("https://abb5f7.myshopify.com/admin/api/2023-04/graphql.json",
+    axios.get("https://abb5f7.myshopify.com/admin/api/2023-04/graphql.json",
         {
             headers: {
             'content-type': 'application/json',
@@ -62,8 +62,8 @@ app.get('/create', (req, res) => {
             res.redirect(`${host_url}/cart/${req.query.itemlist}?checkout[email]=${req.query.email}`)
         })
         .catch((error) => {
-        alert(error)
-        console.error(error); 
+            alert(error)
+            console.error(error); 
         }); 
 })
 
