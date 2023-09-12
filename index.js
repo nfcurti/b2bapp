@@ -1,11 +1,17 @@
 const express = require('express')
 const axios = require('axios');
+var cors = require('cors')
 const app = express()
 const port = 3000
 
 var host_url = "https://b2b.isovoxbooth.com"
 
-app.get('/create', async (req, res) => {
+var corsOptions = {
+    origin: 'https://b2b.isovoxbooth.com',
+    optionsSuccessStatus: 200 
+  }
+
+app.get('/create', cors(corsOptions), async (req, res) => {
     var tax_exempt = false
     
 
